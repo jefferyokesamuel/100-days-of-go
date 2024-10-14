@@ -1,14 +1,22 @@
 package main
 
-import (
-	"strings"
-)
 
 func socksPairs(pairs string) int{
-	socks := strings.Count(pairs, "A")
-	return socks	
+	counts := make(map[rune]int)
+
+	for _, v := range pairs{
+		if v >='A' && v <= 'Z'{
+			counts[v]++
+		}
+	}
+	
+	pair := 0
+	for _, count := range counts{
+		pair += count / 2
+	}
+	return pair
 }
 
 func main() {
-	println(socksPairs("AA"))
+	println(socksPairs("AABBCC"))
 }
