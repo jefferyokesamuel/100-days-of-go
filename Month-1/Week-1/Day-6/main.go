@@ -26,6 +26,6 @@ func nextPrime(num int) int {
 }
 
 func main() {
-	num := 29
-	fmt.Printf("Next prime after %d is %d\n", num, nextPrime(num+1)) 
+	num := 6
+	fmt.Println(nextPrime(num)) 
 }
