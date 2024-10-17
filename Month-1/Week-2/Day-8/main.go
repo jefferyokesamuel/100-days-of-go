@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 
 func main() {
 	phoneMap := make(map[int][]string)
@@ -14,15 +16,15 @@ func main() {
 
 	possibleCombinations := func(a int, b int) []string{
 		var combination []string
-		for i := range phoneMap[a] {
-			combination = append(combination, phoneMap[i]...)
+		for _, letterA := range phoneMap[a] {
+			for _, letterB := range phoneMap[b] {
+				combination = append(combination, letterA+letterB)
+			}
 		} 
-		for i := range phoneMap[b] {
-			combination = append(combination, phoneMap[i]...)
-		}
 
 		return combination
 	}
 
-	
+	result := possibleCombinations(3,3)
+	fmt.Println(result)
 }
