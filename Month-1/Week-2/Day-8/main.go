@@ -1,7 +1,6 @@
 package main
 
 
-
 func main() {
 	phoneMap := make(map[int][]string)
 	phoneMap[2] = []string{"a", "b", "c"}
@@ -13,4 +12,17 @@ func main() {
 	phoneMap[8] = []string{"t", "u", "v"}
 	phoneMap[9] = []string{"w", "x", "y", "z"}
 
+	possibleCombinations := func(a int, b int) []string{
+		var combination []string
+		for i := range phoneMap[a] {
+			combination = append(combination, phoneMap[i]...)
+		} 
+		for i := range phoneMap[b] {
+			combination = append(combination, phoneMap[i]...)
+		}
+
+		return combination
+	}
+
+	
 }
