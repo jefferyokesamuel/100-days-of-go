@@ -25,6 +25,6 @@ func main() {
 		return combination
 	}
 
-	result := possibleCombinations(3,3)
+	result := possibleCombinations(2,9)
 	fmt.Println(result)
 }
